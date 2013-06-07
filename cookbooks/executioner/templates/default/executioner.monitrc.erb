@@ -1,0 +1,5 @@
+check process <%= @worker_name %>
+  with pidfile /var/run/executioner_<%= @app_name %>.pid
+  start program = "/engineyard/bin/executioner <%= @app_name %> start" with timeout 60 seconds
+  stop program = "/engineyard/bin/executioner <%= @app_name %> stop" with timeout 60 seconds
+  group executioner_<%= @app_name %>
